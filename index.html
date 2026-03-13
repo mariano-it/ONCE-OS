@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>ONCE OS</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<div class="app">
+
+  <!-- HEADER -->
+  <header class="app-header">
+    <span class="os-logo">ONCE<span class="os-accent">OS</span></span>
+
+    <div class="reloj-pill">
+      <div class="reloj">
+        <span id="hora"></span>
+        <span id="ampm"></span>
+      </div>
+      <span id="fecha-corta" class="reloj-fecha"></span>
+    </div>
+
+    <div class="header-right">
+      <button id="profileBtn" class="icon-btn" title="Perfil">
+        <span id="profileAvatar">🌙</span>
+      </button>
+      <button id="themeToggle" class="icon-btn" title="Cambiar tema">🩷</button>
+    </div>
+  </header>
+
+  <!-- MAIN -->
+  <main class="app-content">
+
+    <!-- ═══ INICIO ═══ -->
+    <section id="inicio">
+      <div class="inicio-card">
+        <p class="saludo" id="saludo"></p>
+        <h2 class="frase" id="frase"></h2>
+        <p class="subfrase" id="subfrase"></p>
+      </div>
+
+      <div class="insta-gallery">
+        <div class="insta-track">
+          <div class="insta-card"><img src="./assets/US/us-call.jpeg" alt=""><span>Ese día 💗</span></div>
+          <div class="insta-card"><img src="./assets/US/15 -años.jpeg" alt=""><span>Siempre te ves como princesa 👑</span></div>
+          <div class="insta-card"><img src="./assets/US/busy-woman.jpeg" alt=""><span>My Busy Girl ❤️</span></div>
+          <div class="insta-card"><img src="./assets/US/formula-1.jpeg" alt=""><span>MI piloto favorito 🩷</span></div>
+          <div class="insta-card"><img src="./assets/US/la-luna.jpeg" alt=""><span>🌙</span></div>
+          <div class="insta-card"><img src="./assets/US/ropa-nueva.jpeg" alt=""><span>Mi modelo Fav 🩷❤️</span></div>
+          <div class="insta-card"><img src="./assets/US/ojos-novia.jpeg" alt=""><span>Tus ojos que iluminan mi alma 👀💞</span></div>
+          <div class="insta-card"><img src="./assets/US/us-call.jpeg" alt=""><span>Ese día 💗</span></div>
+          <div class="insta-card"><img src="./assets/US/15 -años.jpeg" alt=""><span>Siempre te ves como princesa 👑</span></div>
+          <div class="insta-card"><img src="./assets/US/busy-woman.jpeg" alt=""><span>My Busy Girl ❤️</span></div>
+          <div class="insta-card"><img src="./assets/US/formula-1.jpeg" alt=""><span>MI piloto favorito 🩷</span></div>
+          <div class="insta-card"><img src="./assets/US/la-luna.jpeg" alt=""><span>🌙</span></div>
+          <div class="insta-card"><img src="./assets/US/ropa-nueva.jpeg" alt=""><span>Mi modelo Fav 🩷❤️</span></div>
+          <div class="insta-card"><img src="./assets/US/ojos-novia.jpeg" alt=""><span>Tus ojos que iluminan mi alma 👀💞</span></div>
+        </div>
+      </div>
+
+      <div class="resumen-grid">
+        <div class="resumen-pill" id="resApuntes">
+          <span class="r-icon">📖</span>
+          <span class="r-text">Cargando…</span>
+        </div>
+        <div class="resumen-pill" id="resTareas">
+          <span class="r-icon">✅</span>
+          <span class="r-text">Sin tareas</span>
+        </div>
+      </div>
+
+      <div class="widget-card">
+        <p class="widget-title">¿Qué es Once OS?</p>
+        <p class="widget-text">Un proyecto hecho exclusivamente para mi novia 👑❤️ — <span style="color:var(--accent);cursor:pointer;" onclick="showSection('galeriaFotos')">ver fotos 📸</span></p>
+      </div>
+    </section>
+
+    <!-- ═══ HORARIO ═══ -->
+    <section id="horario" style="display:none;">
+      <div class="section-header">
+        <h2>Horario</h2>
+        <p class="section-sub">Todo tu semestre, organizado 💫</p>
+      </div>
+      <div id="claseActualBanner" class="clase-banner"></div>
+      <div class="horario-semana" id="horarioSemana"></div>
+    </section>
+
+    <!-- ═══ TAREAS ═══ -->
+    <section id="tareas" style="display:none;">
+      <div class="section-header">
+        <h2>Mis Tareas</h2>
+        <p class="section-sub">Tú te organizas, yo te ayudo ❤️</p>
+      </div>
+
+      <div class="tareas-form">
+        <input type="text" id="tareaInput" placeholder="Nueva tarea…" />
+        <select id="materiaSelect">
+          <option value="General">General</option>
+          <option value="Color">Color</option>
+          <option value="Dibujo Vectorial">Dibujo Vectorial</option>
+          <option value="Fotografía">Fotografía</option>
+          <option value="Antropología">Antropología</option>
+          <option value="Fundamentos del Diseño">Fundamentos del Diseño</option>
+          <option value="Inglés">Inglés</option>
+          <option value="H. para el emprendimiento">H. para el emprendimiento</option>
+          <option value="Dibujo Analítico">Dibujo Analítico</option>
+        </select>
+        <input type="date" id="fechaEntrega" />
+        <button id="agregarTarea" class="btn-agregar">+ Agregar tarea</button>
+      </div>
+
+      <div id="listaTareas" class="tareas-lista"></div>
+    </section>
+
+    <!-- ═══ POMODORO ═══ -->
+    <section id="pomodoro" style="display:none;">
+      <div class="section-header">
+        <h2>Pomodoro</h2>
+        <p class="section-sub">Concentración modo ON 🍅✨</p>
+      </div>
+
+      <div class="pomodoro-wrap">
+
+        <!-- Mode buttons -->
+        <div class="pom-modes">
+          <button class="pom-mode-btn active" data-mode="work" data-minutes="25">Enfoque · 25m</button>
+          <button class="pom-mode-btn" data-mode="short" data-minutes="5">Descanso · 5m</button>
+          <button class="pom-mode-btn" data-mode="long" data-minutes="15">Largo · 15m</button>
+        </div>
+
+        <!-- Clock ring -->
+        <div class="pom-clock-container">
+          <svg class="pom-ring" viewBox="0 0 240 240">
+            <circle class="pom-ring-track" cx="120" cy="120" r="108"/>
+            <circle class="pom-ring-progress" id="pomRingProgress"
+              cx="120" cy="120" r="108"
+              stroke-dasharray="678.58"
+              stroke-dashoffset="0"/>
+          </svg>
+          <div class="pom-inner">
+            <span class="pom-label-top" id="pomLabel">ENFOQUE</span>
+            <div class="pom-time" id="pomTime">25:00</div>
+            <div class="pom-sessions" id="pomDots">
+              <div class="pom-dot"></div>
+              <div class="pom-dot"></div>
+              <div class="pom-dot"></div>
+              <div class="pom-dot"></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Controls -->
+        <div class="pom-controls">
+          <button class="pom-btn pom-btn-main" id="pomStartBtn">▶ Iniciar</button>
+          <button class="pom-btn pom-btn-secondary" id="pomResetBtn">↺ Reiniciar</button>
+        </div>
+
+        <!-- Current task input -->
+        <input
+          type="text"
+          class="pom-task-input"
+          id="pomTaskInput"
+          placeholder="¿En qué te vas a enfocar? 🎯"
+          maxlength="60"
+        />
+
+        <!-- Stats -->
+        <div class="pom-stats">
+          <div class="pom-stat">
+            <div class="pom-stat-value" id="pomStatSessions">0</div>
+            <div class="pom-stat-label">Sesiones hoy</div>
+          </div>
+          <div class="pom-stat">
+            <div class="pom-stat-value" id="pomStatMinutes">0m</div>
+            <div class="pom-stat-label">Min. enfocada</div>
+          </div>
+          <div class="pom-stat">
+            <div class="pom-stat-value" id="pomStatStreak">0</div>
+            <div class="pom-stat-label">Racha actual</div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ═══ UNIVERSIDAD ═══ -->
+    <section id="universidad" style="display:none;">
+      <div class="section-header">
+        <h2>Universidad</h2>
+        <p class="section-sub">Todo en un mismo lugar 🏫</p>
+      </div>
+
+      <div class="uni-list">
+        <div class="uni-row hero-row">
+          <span class="uni-icon">🩷</span>
+          <div class="uni-info">
+            <h3>Tú diseñas, yo programo</h3>
+            <p>Siempre juntos 💫</p>
+          </div>
+        </div>
+
+        <div class="uni-row tappable" data-section="casillero">
+          <span class="uni-icon">📚</span>
+          <div class="uni-info"><h3>Casillero Virtual</h3><p>Clases y materiales</p></div>
+          <span class="chevron">›</span>
+        </div>
+
+        <div class="uni-row tappable" data-link="https://outlook.office.com/mail/0/?deeplink=mail%2F0%2F">
+          <span class="uni-icon">✉️</span>
+          <div class="uni-info"><h3>Correo Anáhuac</h3><p>Avisos importantes</p></div>
+          <span class="chevron">›</span>
+        </div>
+
+        <div class="uni-row tappable" data-section="calendario">
+          <span class="uni-icon">📆</span>
+          <div class="uni-info"><h3>Calendario</h3><p>Fechas clave del semestre</p></div>
+          <span class="chevron">›</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══ CALENDARIO ═══ -->
+    <section id="calendario" style="display:none;">
+      <div class="section-header">
+        <button class="back-btn" data-back="universidad">← Atrás</button>
+        <h2>Calendario Académico</h2>
+      </div>
+      <div class="pdf-container">
+        <iframe src="assets/calendarionovia.pdf" title="Calendario Anáhuac" frameborder="0"></iframe>
+      </div>
+    </section>
+
+    <!-- ═══ CASILLERO ═══ -->
+    <section id="casillero" style="display:none;">
+      <div class="section-header">
+        <button class="back-btn" data-back="universidad">← Atrás</button>
+        <h2>Casillero Virtual</h2>
+      </div>
+      <div class="casillero-list">
+        <button class="casillero-row" data-link="https://www.miplana.mx/a/acceso.html">
+          <span>📚</span> Mi Plan A <span class="chevron">›</span>
+        </button>
+        <button class="casillero-row" data-link="https://siu.anahuacmayab.mx/">
+          <span>🗂️</span> SIU <span class="chevron">›</span>
+        </button>
+        <button class="casillero-row" data-link="https://anahuac.brightspace.com/d2l/home">
+          <span>📖</span> BrightSpace <span class="chevron">›</span>
+        </button>
+        <button class="casillero-row" data-link="https://conector-brightspace.redanahuac.mx/">
+          <span>⏹️</span> Cerrar sesión BrightSpace <span class="chevron">›</span>
+        </button>
+      </div>
+    </section>
+
+    <!-- ═══ ALMACENAMIENTO ═══ -->
+    <section id="almacenamiento" style="display:none;">
+      <div class="section-header">
+        <h2>Mis Cosas</h2>
+        <p class="section-sub">Todo pensando en ti 🌺</p>
+      </div>
+      <div class="storage-grid">
+        <div class="storage-card accent-card" data-section="apps">
+          <span class="storage-icon">🌐</span>
+          <h3>Social Media</h3>
+          <p>Lo que usas todos los días</p>
+        </div>
+        <div class="storage-card" data-type="fotos">
+          <span class="storage-icon">📸</span>
+          <h3>Fotos</h3>
+          <p>Tu Scrapbook</p>
+        </div>
+        <div class="storage-card" data-type="videos">
+          <span class="storage-icon">📼</span>
+          <h3>Videos</h3>
+          <p>Tus vlogs cielito</p>
+        </div>
+        <div class="storage-card" data-section="trabajos">
+          <span class="storage-icon">🎒</span>
+          <h3>Trabajos</h3>
+          <p>La chamba del semestre</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══ APPS ═══ -->
+    <section id="apps" style="display:none;">
+      <div class="section-header">
+        <button class="back-btn" data-back="almacenamiento">← Atrás</button>
+        <h2>Apps Diarias</h2>
+      </div>
+      <div class="apps-list">
+        <div class="app-row" onclick="window.open('https://open.spotify.com','_blank')">
+          <span class="app-icon">🎧</span>
+          <div><h3>Spotify</h3><p>Música para tu día</p></div>
+          <span class="chevron">›</span>
+        </div>
+        <div class="app-row" onclick="window.open('https://www.youtube.com','_blank')">
+          <span class="app-icon">▶️</span>
+          <div><h3>YouTube</h3><p>Videos, clases, inspiración</p></div>
+          <span class="chevron">›</span>
+        </div>
+        <div class="app-row" onclick="window.open('https://www.pinterest.com','_blank')">
+          <span class="app-icon">📌</span>
+          <div><h3>Pinterest</h3><p>Ideas y estética</p></div>
+          <span class="chevron">›</span>
+        </div>
+        <div class="app-row" onclick="window.open('https://web.whatsapp.com','_blank')">
+          <span class="app-icon">💬</span>
+          <div><h3>WhatsApp Web</h3><p>Mensajes importantes</p></div>
+          <span class="chevron">›</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══ TRABAJOS ═══ -->
+    <section id="trabajos" style="display:none;">
+      <div class="section-header">
+        <button class="back-btn" data-back="almacenamiento">← Atrás</button>
+        <h2>Trabajos</h2>
+      </div>
+      <div class="empty-state">
+        <span>🎨</span>
+        <p>Aquí irán tus trabajos del semestre</p>
+        <small>Próximamente…</small>
+      </div>
+    </section>
+
+    <!-- ═══ GALERÍA FOTOS ═══ -->
+    <section id="galeriaFotos" style="display:none;">
+      <div class="section-header">
+        <button class="back-btn" data-back="almacenamiento">← Atrás</button>
+        <div class="header-row">
+          <h2>Fotos</h2>
+          <label class="upload-fab">
+            <span>+</span>
+            <input type="file" accept="image/*" multiple hidden id="inputFotos">
+          </label>
+        </div>
+      </div>
+      <div class="galeria-grid" id="gridFotos"></div>
+    </section>
+
+    <!-- ═══ GALERÍA VIDEOS ═══ -->
+    <section id="galeriaVideos" style="display:none;">
+      <div class="section-header">
+        <button class="back-btn" data-back="almacenamiento">← Atrás</button>
+        <div class="header-row">
+          <h2>Videos</h2>
+          <label class="upload-fab">
+            <span>+</span>
+            <input type="file" accept="video/*" multiple hidden id="inputVideos">
+          </label>
+        </div>
+      </div>
+      <div class="galeria-grid" id="gridVideos"></div>
+    </section>
+
+    <!-- ═══ PERFIL ═══ -->
+    <section id="perfil" style="display:none;">
+      <div class="section-header">
+        <button class="back-btn" data-back="inicio">← Atrás</button>
+        <h2>Mi Perfil</h2>
+      </div>
+
+      <div class="perfil-card">
+        <div class="perfil-avatar-wrap">
+          <label class="perfil-avatar-label" title="Cambiar avatar">
+            <span id="perfilEmoji" class="perfil-emoji">🌙</span>
+            <span class="edit-badge">✏️</span>
+          </label>
+        </div>
+
+        <div class="perfil-fields">
+          <label class="field-label">Tu apodo</label>
+          <input type="text" id="perfilNombre" class="perfil-input" placeholder="¿Cómo te llamo?" maxlength="20">
+
+          <label class="field-label">Campus</label>
+          <select id="perfilCampus" class="perfil-input">
+            <option value="Mayab">Anáhuac Mayab</option>
+            <option value="Anahuac">Anáhuac Norte</option>
+          </select>
+
+          <label class="field-label">Color de interfaz</label>
+          <div class="color-picker">
+            <button class="color-dot active" data-color="sky"      style="background:#7eb8f7" title="Azul cielo"></button>
+            <button class="color-dot"        data-color="rose"     style="background:#f4a0be" title="Rosa"></button>
+            <button class="color-dot"        data-color="lavender" style="background:#b8a8f4" title="Lavanda"></button>
+            <button class="color-dot"        data-color="mint"     style="background:#80d4c0" title="Menta"></button>
+            <button class="color-dot"        data-color="peach"    style="background:#f4b88a" title="Durazno"></button>
+          </div>
+
+          <button id="guardarPerfil" class="btn-guardar">Guardar cambios 💾</button>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- NAVEGACIÓN -->
+  <nav class="app-nav">
+    <button class="nav-btn active" data-section="inicio"      title="Inicio">🏠</button>
+    <button class="nav-btn"        data-section="horario"     title="Horario">📅</button>
+    <button class="nav-btn"        data-section="tareas"      title="Tareas">✅</button>
+    <button class="nav-btn"        data-section="pomodoro"    title="Pomodoro">🍅</button>
+    <button class="nav-btn nav-logo" data-section="universidad" title="Universidad">
+      <img src="assets/LogoA.png" alt="Anáhuac">
+    </button>
+  </nav>
+</div>
+
+<!-- VIEWER -->
+<div id="viewer" class="viewer" style="display:none;">
+  <button id="cerrarViewer" class="cerrar-viewer" aria-label="Cerrar">✕</button>
+  <div id="viewerContenido"></div>
+</div>
+
+<!-- TOAST -->
+<div id="toast" class="toast" aria-live="polite"></div>
+
+<script src="js/app.js"></script>
+</body>
+</html>
