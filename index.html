@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>ONCE OS - Tu Dashboard Personal</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Poppins:wght@600;700;800&display=swap" rel="stylesheet">
+</head>
+<body data-theme="dark" data-color="rose">
+
+<div class="app-shell">
+  <!-- HEADER MEJORADO -->
+  <header class="app-header">
+    <div class="header-left">
+      <button class="nav-toggle" id="navToggle" aria-label="Menú">
+        <span></span><span></span><span></span>
+      </button>
+      <div class="logo-brand">
+        <span class="logo-icon">🌙</span>
+        <span class="logo-text">ONCE<span class="accent">OS</span></span>
+      </div>
+    </div>
+
+    <div class="header-center">
+      <div class="header-title" id="headerTitle">Inicio</div>
+    </div>
+
+    <div class="header-right">
+      <button class="icon-btn theme-toggle" id="themeToggle" title="Cambiar tema">
+        <span id="themeIcon"></span>
+      </button>
+      <button class="icon-btn profile-btn" id="profileBtn" title="Perfil">
+        <span id="profileAvatar">👑</span>
+      </button>
+    </div>
+  </header>
+
+  <!-- NAVEGACIÓN MEJORADA -->
+  <nav class="sidebar" id="sidebar">
+    <div class="nav-content">
+      <button class="nav-item active" data-section="inicio">
+        <span class="nav-icon">🏠</span>
+        <span class="nav-label">Inicio</span>
+      </button>
+      <button class="nav-item" data-section="tareas">
+        <span class="nav-icon">✅</span>
+        <span class="nav-label">Tareas</span>
+      </button>
+      <button class="nav-item" data-section="pomodoro">
+        <span class="nav-icon">🍅</span>
+        <span class="nav-label">Focus</span>
+      </button>
+      <button class="nav-item" data-section="universidad">
+        <span class="nav-icon">🎓</span>
+        <span class="nav-label">Universidad</span>
+      </button>
+      <button class="nav-item" data-section="finanzas">
+        <span class="nav-icon">💰</span>
+        <span class="nav-label">Finanzas</span>
+      </button>
+      <button class="nav-item" data-section="habitos">
+        <span class="nav-icon">🎯</span>
+        <span class="nav-label">Hábitos</span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- MAIN CONTENT -->
+  <main class="app-content" id="appContent">
+
+    <!-- ═══ INICIO ═══ -->
+    <section id="inicio" class="page-section active">
+      <div class="greeting-card">
+        <div class="greeting-content">
+          <h1 class="greeting-title" id="saludo">¡Hola, princesa!</h1>
+          <p class="greeting-subtitle" id="frase">Que disfrutes este día tan especial</p>
+          <p class="greeting-desc" id="subfrase"></p>
+        </div>
+      </div>
+
+      <!-- ESTADO ACTUAL -->
+      <div class="status-grid">
+        <div class="status-card">
+          <div class="status-icon">📚</div>
+          <div class="status-info">
+            <p class="status-label">Tu Horario</p>
+            <p class="status-value">En preparación</p>
+          </div>
+        </div>
+        <div class="status-card">
+          <div class="status-icon">✅</div>
+          <div class="status-info">
+            <p class="status-label">Tareas Pendientes</p>
+            <p class="status-value" id="statusTasks">0 pendientes</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- GALERÍA FOTOS -->
+      <div class="section-title">Nuestros Momentos 📸</div>
+      <div class="gallery-carousel">
+        <div class="gallery-track" id="galleryTrack">
+          <div class="gallery-item"><img src="./assets/US/us-call.jpeg" alt="Momento especial"><span class="gallery-label">Ese día 💗</span></div>
+          <div class="gallery-item"><img src="./assets/US/15 -años.jpeg" alt="Foto"><span class="gallery-label">Princesa 👑</span></div>
+          <div class="gallery-item"><img src="./assets/US/busy-woman.jpeg" alt="Foto"><span class="gallery-label">My Busy Girl ❤️</span></div>
+          <div class="gallery-item"><img src="./assets/US/formula-1.jpeg" alt="Foto"><span class="gallery-label">Piloto 🏎️</span></div>
+          <div class="gallery-item"><img src="./assets/US/la-luna.jpeg" alt="Foto"><span class="gallery-label">Luna 🌙</span></div>
+          <div class="gallery-item"><img src="./assets/US/ropa-nueva.jpeg" alt="Foto"><span class="gallery-label">Modelo 🩷</span></div>
+          <div class="gallery-item"><img src="./assets/US/ojos-novia.jpeg" alt="Foto"><span class="gallery-label">Tus ojos 👀</span></div>
+          <div class="gallery-item"><img src="./assets/US/us-call.jpeg" alt="Momento especial"><span class="gallery-label">Ese día 💗</span></div>
+          <div class="gallery-item"><img src="./assets/US/15 -años.jpeg" alt="Foto"><span class="gallery-label">Princesa 👑</span></div>
+          <div class="gallery-item"><img src="./assets/US/busy-woman.jpeg" alt="Foto"><span class="gallery-label">My Busy Girl ❤️</span></div>
+          <div class="gallery-item"><img src="./assets/US/formula-1.jpeg" alt="Foto"><span class="gallery-label">Piloto 🏎️</span></div>
+          <div class="gallery-item"><img src="./assets/US/la-luna.jpeg" alt="Foto"><span class="gallery-label">Luna 🌙</span></div>
+          <div class="gallery-item"><img src="./assets/US/ropa-nueva.jpeg" alt="Foto"><span class="gallery-label">Modelo 🩷</span></div>
+          <div class="gallery-item"><img src="./assets/US/ojos-novia.jpeg" alt="Foto"><span class="gallery-label">Tus ojos 👀</span></div>
+        </div>
+        <button class="carousel-btn prev" id="galleryPrev">‹</button>
+        <button class="carousel-btn next" id="galleryNext">›</button>
+      </div>
+
+      <!-- ACERCA DE -->
+      <div class="about-card">
+        <div class="about-icon">💕</div>
+        <h3 class="about-title">¿Qué es Once OS?</h3>
+        <p class="about-text">Un proyecto especial creado solo para ti, con todo lo que necesitas en un mismo lugar</p>
+      </div>
+    </section>
+
+    <!-- ═══ TAREAS ═══ -->
+    <section id="tareas" class="page-section">
+      <div class="section-header">
+        <h2>Mis Tareas</h2>
+        <p>Tú te organizas, yo te ayudo ❤️</p>
+      </div>
+
+      <div class="tasks-input-section">
+        <input type="text" id="tareaInput" class="task-input" placeholder="Nueva tarea…" />
+        <select id="materiaSelect" class="task-select">
+          <option value="General">General</option>
+          <option value="Color">Color</option>
+          <option value="Dibujo Vectorial">Dibujo Vectorial</option>
+          <option value="Fotografía">Fotografía</option>
+          <option value="Antropología">Antropología</option>
+          <option value="Fundamentos del Diseño">Fundamentos del Diseño</option>
+          <option value="Inglés">Inglés</option>
+          <option value="H. para el emprendimiento">H. para el emprendimiento</option>
+          <option value="Dibujo Analítico">Dibujo Analítico</option>
+        </select>
+        <input type="date" id="fechaEntrega" class="task-input" />
+        <button id="agregarTarea" class="btn-primary">+ Agregar</button>
+      </div>
+
+      <div id="listaTareas" class="tasks-list">
+        <div class="empty-state">
+          <span class="empty-icon">✨</span>
+          <p>Sin tareas pendientes</p>
+          <p class="empty-desc">¡Tienes un día libre! 🎉</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══ POMODORO ═══ -->
+    <section id="pomodoro" class="page-section">
+      <div class="section-header">
+        <h2>Focus Mode</h2>
+        <p>Concentración al máximo 🍅</p>
+      </div>
+
+      <div class="pomodoro-container">
+        <!-- SELECTOR DE MODO -->
+        <div class="mode-selector">
+          <button class="mode-btn active" data-mode="work" data-minutes="25">
+            <span class="mode-icon">⚡</span>
+            <span>Enfoque</span>
+            <span class="mode-time">25m</span>
+          </button>
+          <button class="mode-btn" data-mode="short" data-minutes="5">
+            <span class="mode-icon">🌸</span>
+            <span>Descanso</span>
+            <span class="mode-time">5m</span>
+          </button>
+          <button class="mode-btn" data-mode="long" data-minutes="15">
+            <span class="mode-icon">🌴</span>
+            <span>Largo</span>
+            <span class="mode-time">15m</span>
+          </button>
+        </div>
+
+        <!-- TIMER CIRCULAR -->
+        <div class="timer-display">
+          <svg class="timer-ring" viewBox="0 0 260 260">
+            <circle class="timer-bg" cx="130" cy="130" r="120"/>
+            <circle class="timer-progress" id="pomRingProgress" cx="130" cy="130" r="120"/>
+          </svg>
+          <div class="timer-content">
+            <div class="timer-mode" id="pomLabel">ENFOQUE</div>
+            <div class="timer-time" id="pomTime">25:00</div>
+            <div class="timer-dots" id="pomDots">
+              <div class="dot"></div>
+              <div class="dot"></div>
+              <div class="dot"></div>
+              <div class="dot"></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- CONTROLES -->
+        <div class="pomodoro-controls">
+          <button class="btn-primary btn-large" id="pomStartBtn">▶ Iniciar</button>
+          <button class="btn-secondary btn-large" id="pomResetBtn">↺ Reiniciar</button>
+        </div>
+
+        <!-- TASK INPUT -->
+        <input type="text" class="task-input" id="pomTaskInput" placeholder="¿En qué te vas a enfocar? 🎯" maxlength="60" />
+
+        <!-- STATS -->
+        <div class="stats-grid">
+          <div class="stat-card">
+            <div class="stat-value" id="pomStatSessions">0</div>
+            <div class="stat-label">Sesiones hoy</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-value" id="pomStatMinutes">0m</div>
+            <div class="stat-label">Min. enfocada</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-value" id="pomStatStreak">0</div>
+            <div class="stat-label">Racha actual</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══ UNIVERSIDAD ═══ -->
+    <section id="universidad" class="page-section">
+      <div class="section-header">
+        <h2>Universidad</h2>
+        <p>Todos tus recursos en un lugar 🎓</p>
+      </div>
+
+      <div class="services-list">
+        <div class="service-card hero">
+          <div class="service-icon">🩷</div>
+          <div class="service-content">
+            <h3>Tú diseñas, yo programo</h3>
+            <p>Siempre juntos en cada proyecto 💫</p>
+          </div>
+        </div>
+
+        <button class="service-card tappable" data-section="casillero">
+          <div class="service-icon">📚</div>
+          <div class="service-content">
+            <h3>Casillero Virtual</h3>
+            <p>Acceso a tus plataformas</p>
+          </div>
+          <span class="service-arrow">›</span>
+        </button>
+
+        <a href="https://outlook.office.com/mail/0/?deeplink=mail%2F0%2F" class="service-card tappable" target="_blank" rel="noopener">
+          <div class="service-icon">✉️</div>
+          <div class="service-content">
+            <h3>Correo Anáhuac</h3>
+            <p>Avisos y comunicaciones</p>
+          </div>
+          <span class="service-arrow">›</span>
+        </a>
+
+        <button class="service-card tappable" data-section="calendario">
+          <div class="service-icon">📆</div>
+          <div class="service-content">
+            <h3>Calendario Académico</h3>
+            <p>Fechas importantes del semestre</p>
+          </div>
+          <span class="service-arrow">›</span>
+        </button>
+      </div>
+    </section>
+
+    <!-- ═══ CASILLERO ═══ -->
+    <section id="casillero" class="page-section">
+      <div class="section-header">
+        <button class="back-btn" data-back="universidad">← Atrás</button>
+        <h2>Casillero Virtual</h2>
+      </div>
+
+      <div class="links-grid">
+        <a href="https://www.miplana.mx/a/acceso.html" target="_blank" class="link-card">
+          <span class="link-icon">📚</span>
+          <h3>Mi Plan A</h3>
+          <p>Contenido y recursos</p>
+          <span class="link-arrow">›</span>
+        </a>
+        <a href="https://siu.anahuacmayab.mx/" target="_blank" class="link-card">
+          <span class="link-icon">🗂️</span>
+          <h3>SIU</h3>
+          <p>Sistema de información</p>
+          <span class="link-arrow">›</span>
+        </a>
+        <a href="https://anahuac.brightspace.com/d2l/home" target="_blank" class="link-card">
+          <span class="link-icon">📖</span>
+          <h3>BrightSpace</h3>
+          <p>Plataforma de aprendizaje</p>
+          <span class="link-arrow">›</span>
+        </a>
+        <a href="https://conector-brightspace.redanahuac.mx/" target="_blank" class="link-card">
+          <span class="link-icon">🔐</span>
+          <h3>Cerrar Sesión</h3>
+          <p>Salir de BrightSpace</p>
+          <span class="link-arrow">›</span>
+        </a>
+      </div>
+    </section>
+
+    <!-- ═══ CALENDARIO ═══ -->
+    <section id="calendario" class="page-section">
+      <div class="section-header">
+        <button class="back-btn" data-back="universidad">← Atrás</button>
+        <h2>Calendario Académico</h2>
+      </div>
+      <div class="pdf-viewer">
+        <iframe src="assets/calendarionovia.pdf" title="Calendario Académico"></iframe>
+      </div>
+    </section>
+
+    <!-- ═══ FINANZAS ═══ -->
+    <section id="finanzas" class="page-section">
+      <div class="section-header">
+        <h2>Mis Finanzas</h2>
+        <p>Controla tus gastos y presupuesto 💳</p>
+      </div>
+
+      <div class="finance-input-section">
+        <input type="text" id="gastoDescripcion" class="task-input" placeholder="Descripción del gasto…" />
+        <input type="number" id="gastoMonto" class="task-input" placeholder="Monto" min="0" step="0.01" />
+        <select id="gastoCategoria" class="task-select">
+          <option value="Alimentación">🍔 Alimentación</option>
+          <option value="Transporte">🚗 Transporte</option>
+          <option value="Entretenimiento">🎬 Entretenimiento</option>
+          <option value="Ropa">👗 Ropa</option>
+          <option value="Salud">💊 Salud</option>
+          <option value="Educación">📚 Educación</option>
+          <option value="Otro">📌 Otro</option>
+        </select>
+        <button id="agregarGasto" class="btn-primary">+ Agregar</button>
+      </div>
+
+      <div class="finance-stats">
+        <div class="stat-card">
+          <div class="stat-label">Gasto Total</div>
+          <div class="stat-value" id="financeTotal">$0.00</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-label">Promedio Diario</div>
+          <div class="stat-value" id="financeAverage">$0.00</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-label">Mayor Gasto</div>
+          <div class="stat-value" id="financeMax">$0.00</div>
+        </div>
+      </div>
+
+      <div class="section-title">Mis Gastos 💸</div>
+      <div id="listaGastos" class="finance-list">
+        <div class="empty-state">
+          <span class="empty-icon">💰</span>
+          <p>Sin gastos registrados</p>
+          <p class="empty-desc">¡Empieza a registrar! 📊</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══ HÁBITOS ═══ -->
+    <section id="habitos" class="page-section">
+      <div class="section-header">
+        <h2>Mis Hábitos</h2>
+        <p>Forma nuevas rutinas positivas 🎯</p>
+      </div>
+
+      <div class="habits-input-section">
+        <input type="text" id="habitoNombre" class="task-input" placeholder="Nuevo hábito (ej: Leer 30 min)…" />
+        <select id="habitoFrecuencia" class="task-select">
+          <option value="daily">📅 Diario</option>
+          <option value="weekly">📆 Semanal</option>
+          <option value="monthly">📊 Mensual</option>
+        </select>
+        <button id="agregarHabito" class="btn-primary">+ Agregar</button>
+      </div>
+
+      <div class="habits-stats">
+        <div class="stat-card">
+          <div class="stat-label">Total Hábitos</div>
+          <div class="stat-value" id="habitsTotal">0</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-label">Racha Máxima</div>
+          <div class="stat-value" id="habitsMaxStreak">0</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-label">Completados Hoy</div>
+          <div class="stat-value" id="habitsCompleted">0</div>
+        </div>
+      </div>
+
+      <div class="section-title">Tus Hábitos 🏆</div>
+      <div id="listaHabitos" class="habits-list">
+        <div class="empty-state">
+          <span class="empty-icon">🎯</span>
+          <p>Sin hábitos creados</p>
+          <p class="empty-desc">¡Empieza tu transformación! ✨</p>
+        </div>
+      </div>
+    </section>
+
+  </main>
+</div>
+
+<!-- TOAST NOTIFICATION -->
+<div class="toast" id="toast"></div>
+
+<script src="js/app.js"></script>
+</body>
+</html>
